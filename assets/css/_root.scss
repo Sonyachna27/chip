@@ -1,0 +1,215 @@
+@font-face {
+	font-family: "Red Hat Display";
+	src: url(../fonts/RedHatDisplay-Regular.ttf);
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Red Hat Display";
+	src: url(../fonts/RedHatDisplay-Medium.ttf);
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Red Hat Display";
+	src: url(../fonts/RedHatDisplay-SemiBold.ttf);
+	font-weight: 600;
+}
+@font-face {
+	font-family: "Red Hat Display";
+	src: url(../fonts/RedHatDisplay-Bold.ttf);
+	font-weight: 700;
+}
+
+// variables
+$--black-silver:#283441;
+$--dark-greenish-blue:#022F45;
+$--white:#ffffff;
+$--silver-white: #ECF1F5;
+$--selected-yellow:#FEB703;
+$--silver-blue:#9AACB5;
+$--yellow-background:#FFF3D6;
+$--black-silver: #283441;
+
+//
+.container{
+	max-width: 1340px;
+	padding: 0 20px;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+h1{
+	@include titleH1;
+}
+h2{
+	@include titleH2;
+}
+h3{
+	@include titleH3;
+}
+h4{
+	@include titleH4;
+}
+body{
+	font-family: "Red Hat Display";
+}
+.btn{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 3.5px 3.5px 3.5px 20.5px;
+	align-items: center;
+	justify-content: space-between;
+	max-width: fit-content;
+	background-color: $--white;
+	color: $--dark-greenish-blue;
+	@include text-regular-xs;
+	border-radius: 300px;
+	border: 1px solid $--dark-greenish-blue;
+	transition: .3s ease-in-out;
+	& svg{
+		max-width: 30px;
+		max-height: 30px;
+	}
+	&:hover{
+		background-color:$--dark-greenish-blue ;
+		color: $--white;
+		& svg path{
+			fill: $--dark-greenish-blue;
+		}
+		& svg circle{
+			fill: $--white;
+		}
+	}
+
+}
+.btn-blue{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 13.5px 19px 13.5px 39px;
+	align-items: center;
+	justify-content: space-between;
+	max-width: fit-content;
+	background-color: $--dark-greenish-blue;
+	color: $--white;
+	@include text-regular-xs;
+	border-radius: 300px;
+	border: 1px solid $--dark-greenish-blue;
+	transition: .3s ease-in-out;
+	& svg{
+		max-width: 30px;
+		max-height: 30px;
+	}
+	&:hover{
+		background-color: $--white;
+		color: $--dark-greenish-blue;
+		border-color: $--white;
+		& svg path{
+			fill: $--white;
+			
+		}
+		& svg circle{
+			fill: $--dark-greenish-blue;
+		}
+	}
+}
+.social-links{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	gap: 5px;
+	& a{
+		transition: .3s ease-in-out;
+		max-width: 40px;
+		max-height: 40px;
+		width: 100%;
+		height: 100%;
+		& svg{
+			max-width: 100%;
+			max-height: 100%;
+			transition: fill .3s ease-in-out;
+			& circle,
+			& path{
+				transition: fill .3s ease-in-out;
+			}
+		}
+		&:hover{
+			& svg circle{
+				fill: $--dark-greenish-blue;
+			}
+			& svg path{
+				fill: $--white;
+			}
+		}
+	}
+}
+.hours{
+	display:flex;
+	flex-direction: column;
+	padding: 30px;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	flex-shrink: 0;
+	border-radius: 30px;
+	border: 1px solid var(--Dark-greenish-blue, #022F45);
+	background: #FFF;
+	color: $--black-silver;
+	position: relative;
+	height: auto;
+	&.header-hours{
+		padding: 13.5px 42px 13.5px 20px;
+		&:after{
+			content: '';
+			width: 14px;
+			height: 14px;
+			position: absolute;
+			right: 20px;
+			left: inherit;
+			top: calc(50% - 9px);
+			transition: .3s ease-in-out;
+			background: url(../images/arrow-down.svg) center center / cover no-repeat;
+		}
+		&:hover,
+		&:focus-visible{
+			&:after{
+				transform: rotate(180deg);
+			}
+			& ul{
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+		}
+		& p{
+			@include text-regular-xs;
+			cursor: pointer;
+			text-transform: uppercase;
+		}
+		& ul{
+			z-index: 1;
+			visibility: hidden;
+			position: absolute;
+			top: calc(100% + 10px);
+			width: 240px;
+			height: auto;
+			padding: 20px;
+			border-radius: 30px;
+			opacity: 0;
+			transform: translateY(10px);
+			background-color: $--white;
+			border:1px solid $--dark-greenish-blue;
+			transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+		}
+	}
+	& p{
+		@include titleH4;
+	}
+	& ul{
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		@include text-regular-line
+	}
+}
