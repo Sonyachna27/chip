@@ -4,10 +4,18 @@ document.addEventListener("DOMContentLoaded", function () {
 	const htmlElement = document.querySelector("html");
 	const headerNav = document.querySelector(".header__nav");
 	const navLinks = document.querySelectorAll("nav a");
+	const headerTop = document.querySelector(".header__top");
+	const headerBottom = document.querySelector(".header__bottom");
+	const headerMobMenu = document.querySelector('.header__mob-menu');
+	resizeMenuBtn.addEventListener("click", () => {
+		htmlElement.classList.toggle("open");
+		// висота хедера для встановлення відступу мобільного на кожен клік вимірюємо аби не ставити наглядач
 
-	resizeMenuBtn.addEventListener("click", () =>
-		htmlElement.classList.toggle("open")
-	);
+		const headerTopHeight = headerTop.offsetHeight;
+		const headerBottomHeight = headerBottom.offsetHeight;
+		headerMobMenu.style.top = headerTopHeight + headerBottomHeight + `px`;
+		headerMobMenu.style.height = `calc(100vh - (${headerTopHeight}px + ${headerBottomHeight}px)`;
+	});
 
 	navLinks.forEach((link) => {
 		link.addEventListener("click", () => {
@@ -37,6 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 
+	
 
+	
 
 }); //кінець DOMContentLoaded

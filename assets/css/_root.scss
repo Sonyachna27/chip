@@ -113,6 +113,22 @@ body{
 		}
 	}
 }
+.logo{
+	width: 100%;
+	display: block;
+	& img{
+		max-width: 100%;
+		width: 100%;
+	}
+	header &{
+		max-width: 200px;
+		
+	}
+	footer & {
+		max-width: 320px;
+		margin: 0 auto;
+	}
+}
 .social-links{
 	display: flex;
 	align-items: center;
@@ -148,8 +164,7 @@ body{
 	display:flex;
 	flex-direction: column;
 	padding: 30px;
-	justify-content: center;
-	align-items: center;
+align-items: flex-start;
 	gap: 20px;
 	flex-shrink: 0;
 	border-radius: 30px;
@@ -158,7 +173,10 @@ body{
 	color: $--black-silver;
 	position: relative;
 	height: auto;
+
 	&.header-hours{
+		justify-content: center;
+		align-items: center;
 		padding: 13.5px 42px 13.5px 20px;
 		&:after{
 			content: '';
@@ -205,6 +223,7 @@ body{
 	}
 	& p{
 		@include titleH4;
+		text-transform: capitalize;
 	}
 	& ul{
 		display: flex;

@@ -1,0 +1,144 @@
+.footer__top{
+	background-color: $--silver-white;
+	padding: 30px 0px;
+	border-radius: 60px 60px 0px 0px;
+}
+.footer__top-wrap{
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	@media screen and (max-width:767px) {
+		flex-wrap: wrap;
+	}
+		& .btn{
+			margin-left: auto;
+			padding: 13.5px 19px 13.5px 40px;
+			@include text-regular;
+			color: $--dark-greenish-blue;
+			gap: 60px;
+			@media screen and (max-width:767px) {
+				gap: 30px;
+			}
+			& svg{
+				max-width: 36px;
+				max-height: 36px;
+			}
+			&:hover{
+				color: $--white;
+			}
+		}
+		
+}
+.footer__center{
+	background-color: $--dark-greenish-blue;
+	color: $--silver-blue;
+	
+}
+
+.footer__center-top{
+	width: 100%;
+	padding: 60px 0;
+}
+.footer__center-menu{
+	display: flex;
+	gap: 14px;
+	@media screen and (max-width:1023px) {
+		flex-direction: column;
+	}
+}
+.footer-menu{
+	display: flex;
+	width: 73%;
+	justify-content: space-around;
+	gap: 40px;
+	@media screen and (max-width:1023px) {
+		flex-direction: column;
+	}
+	& li:not(.sub-menu li){
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		& > a{
+			font-size: 24px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: normal;
+			color: $--white;
+		}
+	}
+	& .sub-menu{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		& a{
+			transition: .3s ease-in;
+			&:hover{
+				color: $--selected-yellow;
+			}
+		}
+	}
+}
+.footer__socials-wrap{
+	width: 24%;
+	
+}
+.footer__social-item{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 20px 0;
+	border-bottom: 1px solid $--silver-blue;
+	& a{
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		color: $--white;
+		@media screen and (min-width:1200px) {
+			font-size: 24px;
+		}
+		@media screen and (max-width:1024pxpx) {
+			word-break: break-all;
+		}
+	}
+	& a.btn{
+		color: $--dark-greenish-blue;
+		text-transform: none;
+		@include text-regular-s-Semi;
+		max-width: 100%;
+		width: 100%;
+		padding: 13.5px 20px ;
+		& svg{
+			max-width: 36px;
+			max-height: 36px;
+		}
+	}
+}
+.footer__social{
+	justify-content: flex-start;
+}
+
+.lumious {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	max-width: 270px;
+  }
+  .footer__copy{
+	background-color: $--selected-yellow;
+  }
+  .footer__copy_wrap{
+	padding: 20px 0;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	flex-wrap: wrap;
+	@include text-regular;
+	& ul{
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+  }
