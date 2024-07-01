@@ -124,6 +124,15 @@ h2 {
     font-size: 24px;
   }
 }
+h2 span {
+  font: inherit;
+  color: inherit;
+  border-radius: 500px;
+  border: 1px solid #022F45;
+  background: #ffffff;
+  padding: 5px 15px;
+  margin-left: 10px;
+}
 
 h3 {
   font-size: 28px;
@@ -156,6 +165,11 @@ h4 {
 
 body {
   font-family: "Red Hat Display";
+  color: #022F45;
+}
+
+.mb-m {
+  margin-bottom: 60px;
 }
 
 .btn {
@@ -218,7 +232,7 @@ body {
 .btn-blue:hover {
   background-color: #ffffff;
   color: #022F45;
-  border-color: #ffffff;
+  border-color: #022F45;
 }
 .btn-blue:hover svg path {
   fill: #ffffff;
@@ -358,6 +372,128 @@ footer .logo {
   line-height: 130%;
   font-family: "Red Hat Display";
   font-weight: 400;
+}
+
+.step {
+  width: 100%;
+  position: relative;
+  margin-bottom: 125px;
+  padding-left: 5%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+@media screen and (max-width: 550px) {
+  .step {
+    height: 55px;
+  }
+}
+.step:after {
+  content: "";
+  width: 100%;
+  height: 125px;
+  background-image: url(../images/step-left.svg);
+  background-position: right;
+  background-repeat: no-repeat;
+  display: block;
+}
+@media screen and (max-width: 1440px) {
+  .step:after {
+    background-position: 0% 44%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .step:after {
+    background-position: 100% 44%;
+    height: 55px;
+    background-image: url(../images/step-left-short.svg);
+  }
+}
+@media screen and (max-width: 380px) {
+  .step:after {
+    background-position: -10% 44%;
+  }
+}
+@media screen and (min-width: 1441px) {
+  .step:after {
+    background-position: auto;
+  }
+}
+
+.title-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.title-space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media screen and (max-width: 767px) {
+  .title-space {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media screen and (max-width: 1023px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 767px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  height: 100%;
+  flex-grow: 1;
+  padding: 40px;
+  border-radius: 30px;
+  min-height: 280px;
+  max-width: 100%;
+  width: 100%;
+}
+.grid-item img {
+  max-width: 64px;
+  max-height: 64px;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.grid-item-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 100%;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.grid-item-title svg {
+  max-width: 36px;
+  width: 100%;
+  aspect-ratio: 1;
 }
 
 .header__top {
@@ -731,4 +867,205 @@ footer .logo {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.main {
+  background-color: #ECF1F5;
+  border-radius: 0px 0px 60px 60px;
+}
+
+.main__container {
+  display: flex;
+  padding: 80px 0;
+  gap: 30px;
+}
+@media screen and (min-width: 1200px) {
+  .main__container {
+    gap: 60px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .main__container {
+    flex-direction: column-reverse;
+  }
+}
+
+.main__content {
+  width: 45%;
+  height: auto;
+  flex-grow: 1;
+  flex-direction: column;
+  display: flex;
+}
+@media screen and (max-width: 1023px) {
+  .main__content {
+    width: 100%;
+  }
+}
+.main__content h1 {
+  margin-bottom: 14px;
+}
+.main__content p {
+  font-size: 16px;
+  line-height: 130%;
+  font-family: "Red Hat Display";
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.main__content p:has(+ a) {
+  margin-bottom: 40px;
+}
+.main__content .btn-blue {
+  max-width: 300px;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 60px;
+}
+
+.main__items {
+  display: flex;
+  gap: 10px;
+}
+@media screen and (max-width: 767px) {
+  .main__items {
+    overflow: auto;
+    overflow-y: scroll;
+  }
+}
+
+.main__item {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  flex-grow: 1;
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 20px;
+  max-width: 170px;
+}
+@media screen and (max-width: 767px) {
+  .main__item {
+    min-width: 170px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .main__item {
+    min-width: 65%;
+  }
+}
+.main__item img {
+  margin-bottom: 40px;
+  max-width: 48px;
+  max-height: 48px;
+  width: 100%;
+  height: 100%;
+}
+.main__item span {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 5px;
+}
+.main__item p {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  margin-bottom: 0;
+}
+
+.main__img {
+  width: 45%;
+  position: relative;
+}
+@media screen and (max-width: 1023px) {
+  .main__img {
+    width: 100%;
+  }
+}
+.main__img img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.main__img .car,
+.main__img .dell {
+  position: absolute;
+  aspect-ratio: 1;
+  top: 0;
+  left: inherit;
+  right: 0;
+}
+@media screen and (max-width: 1023px) {
+  .main__img .car,
+  .main__img .dell {
+    display: none;
+  }
+}
+.main__img .car {
+  max-width: 110px;
+  max-height: 110px;
+  transform: translate(-100%, 70%);
+}
+@media screen and (max-width: 1201px) and (min-width: 1100px) {
+  .main__img .car {
+    max-width: 140px;
+    max-height: 140px;
+    transform: translate(-84%, 18%);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main__img .car {
+    transform: translate(-75%, 0%);
+    max-width: 156px;
+    max-height: 156px;
+  }
+}
+.main__img .dell {
+  max-width: 85px;
+  max-height: 85px;
+  transform: translate(-30%, 153%);
+}
+@media screen and (min-width: 1200px) {
+  .main__img .dell {
+    transform: translate(-25%, 100%);
+    max-width: 117px;
+    max-height: 117px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .main__img .dell {
+    max-width: 100px;
+    max-height: 102px;
+    transform: translate(-25%, 114%);
+  }
+}
+
+.moving__container .btn-blue {
+  margin: 0 auto;
+  gap: 60px;
+  font-size: 16px;
+}
+@media screen and (max-width: 375px) {
+  .moving__container .btn-blue {
+    justify-content: space-between;
+    max-width: 100%;
+    width: 100%;
+    gap: 20px;
+  }
+}
+.moving__container .btn-blue svg {
+  max-width: 36px;
+  max-height: 36px;
+}
+
+.moving__items {
+  margin-bottom: 30px;
+}
+
+.moving__item {
+  background-color: #ECF1F5;
 }/*# sourceMappingURL=style.css.map */
