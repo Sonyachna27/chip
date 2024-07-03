@@ -101,7 +101,7 @@ button {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 45px;
   line-height: 120%;
   font-family: "Red Hat Display";
   font-weight: 600;
@@ -109,19 +109,23 @@ h1 {
 @media screen and (max-width: 550px) {
   h1 {
     font-size: 28px;
-    font-weight: 700;
   }
 }
 
 h2 {
-  font-size: 32px;
-  line-height: 120%;
+  font-size: 40px;
+  line-height: normal;
   font-family: "Red Hat Display";
-  font-weight: 700;
+  font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 34px;
+  }
 }
 @media screen and (max-width: 550px) {
   h2 {
-    font-size: 24px;
+    font-size: 26px;
   }
 }
 h2 span {
@@ -135,14 +139,19 @@ h2 span {
 }
 
 h3 {
-  font-size: 28px;
-  line-height: 120%;
+  font-size: 32px;
+  line-height: 100%;
   font-family: "Red Hat Display";
-  font-weight: 700;
+  font-weight: 500;
+}
+@media screen and (max-width: 767px) {
+  h3 {
+    font-size: 32px;
+  }
 }
 @media screen and (max-width: 550px) {
   h3 {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
@@ -150,14 +159,9 @@ h4 {
   font-size: 20px;
   line-height: 120%;
   font-family: "Red Hat Display";
-  font-weight: 500;
+  font-weight: 600;
 }
-@media screen and (max-width: 767px) and (min-width: 551px) {
-  h4 {
-    font-weight: 700;
-  }
-}
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 767px) {
   h4 {
     font-size: 20px;
   }
@@ -170,6 +174,20 @@ body {
 
 .mb-m {
   margin-bottom: 60px;
+}
+
+.mb-l {
+  margin-bottom: 120px;
+}
+@media screen and (max-width: 1023px) {
+  .mb-l {
+    margin-bottom: 60px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .mb-l {
+    margin-bottom: 30px;
+  }
 }
 
 .btn {
@@ -196,14 +214,7 @@ body {
   max-height: 30px;
 }
 .btn:hover {
-  background-color: #022F45;
-  color: #ffffff;
-}
-.btn:hover svg path {
-  fill: #022F45;
-}
-.btn:hover svg circle {
-  fill: #ffffff;
+  background-color: #FFF3D6;
 }
 
 .btn-blue {
@@ -222,23 +233,40 @@ body {
   font-family: "Red Hat Display";
   font-weight: 400;
   border-radius: 300px;
-  border: 1px solid #022F45;
+  border: 1px solid transparent;
   transition: 0.3s ease-in-out;
 }
 .btn-blue svg {
+  max-width: 36px;
+  max-height: 36px;
+}
+header .btn-blue svg {
   max-width: 30px;
   max-height: 30px;
 }
 .btn-blue:hover {
-  background-color: #ffffff;
+  background: #FEB703;
   color: #022F45;
-  border-color: #022F45;
 }
 .btn-blue:hover svg path {
   fill: #ffffff;
 }
 .btn-blue:hover svg circle {
   fill: #022F45;
+}
+.btn-blue:active {
+  background: #FFCC48;
+}
+.btn-blue:active svg path {
+  fill: #ffffff;
+}
+.btn-blue:active svg circle {
+  fill: #022F45;
+}
+.btn-blue:disabled {
+  background: #9AACB5;
+  color: #FFF;
+  border-color: transparent;
 }
 
 .logo {
@@ -280,10 +308,7 @@ footer .logo {
   transition: fill 0.3s ease-in-out;
 }
 .social-links a:hover svg circle {
-  fill: #022F45;
-}
-.social-links a:hover svg path {
-  fill: #ffffff;
+  fill: #FEB703;
 }
 
 .hours {
@@ -351,15 +376,10 @@ footer .logo {
   font-size: 20px;
   line-height: 120%;
   font-family: "Red Hat Display";
-  font-weight: 500;
+  font-weight: 600;
   text-transform: capitalize;
 }
-@media screen and (max-width: 767px) and (min-width: 551px) {
-  .hours p {
-    font-weight: 700;
-  }
-}
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 767px) {
   .hours p {
     font-size: 20px;
   }
@@ -369,7 +389,7 @@ footer .logo {
   flex-direction: column;
   gap: 5px;
   font-size: 16px;
-  line-height: 130%;
+  line-height: 140%;
   font-family: "Red Hat Display";
   font-weight: 400;
 }
@@ -419,6 +439,9 @@ footer .logo {
     background-position: auto;
   }
 }
+.step.step-left {
+  transform: scaleX(-1);
+}
 
 .title-center {
   display: flex;
@@ -426,12 +449,22 @@ footer .logo {
   justify-content: center;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 767px) {
+  .title-center {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
 
 .title-space {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+}
+.title-space h2 {
+  max-width: 70%;
 }
 @media screen and (max-width: 767px) {
   .title-space {
@@ -494,6 +527,116 @@ footer .logo {
   max-width: 36px;
   width: 100%;
   aspect-ratio: 1;
+}
+.grid-item-title svg path, .grid-item-title svg circle {
+  transition: 0.3 ease-in-out;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+@media screen and (max-width: 1023px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+.row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 40px;
+}
+@media screen and (max-width: 1023px) {
+  .row-reverse {
+    flex-direction: column;
+  }
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  line-height: 140%;
+  font-family: "Red Hat Display";
+  font-weight: 400;
+  padding: 18.5px;
+  border-radius: 300px;
+  border: 1px solid #022F45;
+  background-color: #ffffff;
+  transition: 0.3s ease-in-out;
+}
+.contact-link.mini-link svg {
+  max-width: 30px;
+  max-height: 30px;
+  aspect-ratio: 1;
+}
+.contact-link svg {
+  max-width: 62px;
+  max-height: 62px;
+  aspect-ratio: 1;
+}
+.contact-link svg path, .contact-link svg circle {
+  transition: 0.25s ease;
+}
+.contact-link:hover {
+  background-color: #FFF3D6;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+}
+.stars svg {
+  max-width: 20px;
+  max-height: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.arrows {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 140px;
+}
+@media screen and (max-width: 767px) {
+  .arrows {
+    display: none;
+  }
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 64px;
+  max-height: 64px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #022F45;
+  padding: 20px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (max-width: 767px) {
+  .arrow {
+    display: none;
+  }
+}
+.arrow.swiper-button-disabled {
+  background-color: #9AACB5;
+  cursor: not-allowed;
+}
+.arrow.swiper-button-disabled:hover {
+  background-color: #9AACB5;
+}
+.arrow:hover {
+  background-color: #FEB703;
 }
 
 .header__top {
@@ -635,7 +778,7 @@ footer .logo {
   transform: translateY(0);
 }
 .header__navigation .menu li:not(:has(.sub-menu li)) > a:hover {
-  color: #FFF3D6;
+  color: #ffffff;
 }
 .header__navigation ul.sub-menu {
   position: absolute;
@@ -789,7 +932,7 @@ footer .logo {
   transition: 0.3s ease-in;
 }
 .footer-menu .sub-menu a:hover {
-  color: #FEB703;
+  color: #ffffff;
 }
 
 .footer__socials-wrap {
@@ -907,7 +1050,7 @@ footer .logo {
 }
 .main__content p {
   font-size: 16px;
-  line-height: 130%;
+  line-height: 140%;
   font-family: "Red Hat Display";
   font-weight: 400;
   margin-bottom: 10px;
@@ -1068,4 +1211,647 @@ footer .logo {
 
 .moving__item {
   background-color: #ECF1F5;
+  transition: 0.3s ease-in-out;
+}
+.moving__item:hover {
+  background-color: #FFF3D6;
+}
+
+.target__tabs {
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 1023px) {
+  .target__tabs {
+    flex-direction: column;
+  }
+}
+
+.target__list {
+  width: 46%;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 1023px) {
+  .target__list {
+    flex-direction: row;
+    overflow: hidden;
+    overflow-x: auto;
+    gap: 8px;
+    width: 100%;
+  }
+}
+
+.target__list-item {
+  display: flex;
+  align-items: center;
+  padding: 28.5px;
+  border-radius: 25px;
+  border: 1px solid #9AACB5;
+  background: #ffffff;
+  font-size: 20px;
+  line-height: 120%;
+  font-family: "Red Hat Display";
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (max-width: 767px) {
+  .target__list-item {
+    font-size: 20px;
+  }
+}
+.target__list-item.active {
+  background-color: #FEB703;
+}
+.target__list-item:hover {
+  background-color: #FFF3D6;
+}
+@media screen and (max-width: 1023px) {
+  .target__list-item {
+    min-width: calc(100% - 15px);
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .target__list-item {
+    padding: 20px;
+  }
+}
+
+.target__content {
+  flex-direction: column;
+  border-radius: 50px;
+  border: 1px solid #9AACB5;
+  background: #ffffff;
+  width: 79%;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (max-width: 1023px) {
+  .target__content {
+    width: 100%;
+  }
+}
+.target__content img {
+  max-height: 300px;
+  max-width: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
+}
+.target__content h3 {
+  font-size: 20px;
+  line-height: 120%;
+  font-family: "Red Hat Display";
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 767px) {
+  .target__content h3 {
+    font-size: 20px;
+  }
+}
+.target__content p {
+  margin-bottom: 30px;
+}
+.target__content p:has(+ ul) {
+  margin-bottom: 15px;
+}
+.target__content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 30px;
+}
+.target__content ul li {
+  font-size: 16px;
+  line-height: 140%;
+  font-family: "Red Hat Display";
+  font-weight: 400;
+}
+.target__content .btn-blue {
+  gap: 60px;
+}
+
+.target__content-text {
+  padding: 40px;
+}
+@media screen and (max-width: 767px) {
+  .target__content-text {
+    padding: 20px;
+  }
+}
+
+.consultation {
+  padding: 80px 0;
+  background-color: #ECF1F5;
+  border-radius: 60px;
+}
+@media screen and (max-width: 767px) {
+  .consultation {
+    padding: 40px 0;
+  }
+}
+
+.consultation__container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1023px) {
+  .consultation__container {
+    flex-direction: column;
+  }
+}
+
+.consultation__content {
+  flex: 0 1 42.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.consultation__content h2 {
+  margin-bottom: 20px;
+}
+.consultation__content p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 140%;
+  font-family: "Red Hat Display";
+  font-weight: 400;
+}
+.consultation__content p:nth-last-of-type(1) {
+  margin-bottom: 30px;
+}
+.consultation__content .btn-blue {
+  gap: 60px;
+}
+@media screen and (max-width: 550px) {
+  .consultation__content .btn-blue {
+    gap: 40px;
+    max-width: 100%;
+  }
+}
+
+.consultation__img {
+  flex: 0 0 47.5%;
+  height: 100%;
+}
+.consultation__img img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 0.8;
+}
+
+.order__row {
+  margin-bottom: 10px;
+}
+
+.order__row_descr {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  border-radius: 60px;
+  border: 1px solid #022F45;
+  background: #ECF1F5;
+  height: -moz-fit-content;
+  height: fit-content;
+  flex: 1 1 45%;
+}
+@media screen and (max-width: 1023px) {
+  .order__row_descr {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .order__row_descr {
+    padding: 30px;
+  }
+}
+.order__row_descr h3 {
+  margin-bottom: 5px;
+}
+.order__row_descr p {
+  font-size: 16px;
+  line-height: 140%;
+  font-family: "Red Hat Display";
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.order__row_descr p:nth-last-of-type(1) {
+  margin-bottom: 40px;
+}
+.order__row_descr .btn-blue {
+  gap: 60px;
+}
+@media screen and (max-width: 550px) {
+  .order__row_descr .btn-blue {
+    max-width: 100%;
+    gap: 20px;
+  }
+}
+
+.order__row_descr-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #022F45;
+  background-color: #ffffff;
+  font-size: 20px;
+  line-height: 120%;
+  font-family: "Red Hat Display";
+  font-weight: 600;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  padding: 20px;
+  aspect-ratio: 1;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  .order__row_descr-count {
+    font-size: 20px;
+  }
+}
+
+.area__wrap {
+  gap: 20px;
+  display: flex;
+}
+@media screen and (max-width: 1023px) {
+  .area__wrap {
+    flex-direction: column-reverse;
+  }
+}
+
+ul.area__list {
+  display: flex;
+  align-items: center;
+  gap: 7px 40px;
+  flex-wrap: wrap;
+  padding: 30px;
+  background-color: #ECF1F5;
+  border: #022F45 1px solid;
+  border-radius: 40px;
+  flex: 1 1 40.5%;
+}
+ul.area__list li {
+  width: calc(33.3333333333% - 30px);
+}
+@media screen and (max-width: 767px) {
+  ul.area__list li {
+    width: calc(50% - 20px);
+  }
+}
+ul.area__list li a {
+  font-size: 16px;
+  line-height: 140%;
+  font-family: "Red Hat Display";
+  font-weight: 400;
+  text-decoration-line: underline;
+  transition: 0.3s ease-in-out;
+}
+ul.area__list li a:hover {
+  color: #FEB703;
+}
+
+.area__map {
+  border-radius: 20px;
+  width: 60%;
+}
+@media screen and (max-width: 1023px) {
+  .area__map {
+    width: 100%;
+  }
+}
+.area__map img {
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
+}
+@media screen and (max-width: 550px) {
+  .area__map img {
+    aspect-ratio: 1/1;
+  }
+}
+
+.reviewsSlider {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.reviews {
+  padding: 100px 0;
+  border-radius: 60px;
+  background-color: #ECF1F5;
+}
+
+.reviews__title {
+  margin-bottom: 40px;
+}
+.reviews__title h2 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+@media screen and (max-width: 767px) {
+  .reviews__title h2 {
+    flex-direction: column;
+  }
+}
+
+.response {
+  padding: 40px;
+  border-radius: 30px;
+  border: 1px solid #9AACB5;
+  background-color: #ffffff;
+  height: auto;
+}
+@media screen and (max-width: 767px) {
+  .response {
+    padding: 20px;
+  }
+}
+
+.response-title {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 767px) {
+  .response-title {
+    margin-bottom: 20px;
+  }
+}
+
+.user-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  max-width: 64px;
+  max-height: 64px;
+  aspect-ratio: 1;
+}
+.user-img img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.reviews-pagination.swiper-pagination-bullets {
+  transform: translate(0%, 40px);
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  z-index: 1;
+}
+.reviews-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  background-color: #283441;
+}
+
+.promo {
+  border-radius: 60px;
+  background-color: #ECF1F5;
+}
+@media screen and (max-width: 767px) {
+  .promo {
+    overflow: hidden;
+  }
+}
+
+.promo__container {
+  display: flex;
+}
+@media screen and (max-width: 767px) {
+  .promo__container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.promo__descr {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  .promo__descr {
+    width: 100%;
+    padding: 40px 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .promo__descr .contact-link {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.news__slider {
+  padding-bottom: 40px;
+}
+
+.newsSlider {
+  padding-bottom: 40px;
+}
+
+.news__title {
+  margin-bottom: 40px;
+}
+
+.news {
+  border-radius: 50px 50px 60px 60px;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+  flex-grow: 1;
+  border: 1px solid #9AACB5;
+  display: flex;
+  flex-direction: column;
+}
+.news:hover .news__img::after {
+  opacity: 1;
+}
+
+.news__img {
+  position: relative;
+  border-radius: 50px 50px 0px 0px;
+  max-height: 270px;
+  height: 100%;
+  flex-grow: 1;
+  position: relative;
+}
+.news__img::after {
+  content: "";
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: 0.3s ease-in-out;
+  background-color: rgba(254, 183, 3, 0.4);
+}
+@media screen and (max-width: 550px) {
+  .news__img {
+    max-height: 220px;
+  }
+}
+.news__img img {
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
+}
+
+.express {
+  position: absolute;
+  padding: 10px;
+  top: 40px;
+  left: 40px;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #022F45;
+  border-radius: 500px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.news__content {
+  padding: 30px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 0px 0px 60px 60px;
+  flex-grow: 1;
+  flex: 1 1 45%;
+}
+.news__content h3 {
+  font-size: 20px;
+  line-height: 120%;
+  font-family: "Red Hat Display";
+  font-weight: 600;
+  line-height: 130%;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .news__content h3 {
+    font-size: 20px;
+  }
+}
+
+.news-pagination.swiper-pagination-bullets {
+  transform: translate(0, 40px);
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.news-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  background-color: #283441;
+}
+
+@media screen and (max-width: 767px) {
+  .news-arrows {
+    display: none;
+  }
+}
+
+.article__container {
+  padding: 60px;
+  background-color: #ffffff;
+  border-radius: 60px;
+  border: 1px solid #9AACB5;
+}
+@media screen and (max-width: 767px) {
+  .article__container {
+    padding: 30px;
+  }
+}
+
+.state__article {
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 767px) {
+  .state__article {
+    margin-bottom: 20px;
+  }
+}
+.state__article h2 {
+  margin-bottom: 20px;
+}
+.state__article p {
+  margin-bottom: 30px;
+}
+.state__article p:has(+ p), .state__article p:has(+ ul) {
+  margin-bottom: 10px;
+}
+.state__article h3 {
+  margin-bottom: 15px;
+}
+.state__article h4 {
+  margin-bottom: 15px;
+}
+.state__article ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 30px;
+}
+.state__article img {
+  max-width: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 100%;
+  aspect-ratio: 1/0.7;
+}
+
+.article-btn {
+  color: #022F45;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  text-decoration-line: underline;
+  transition: 0.3s ease-in-out;
+  background: none;
+  outline: none;
+}
+.article-btn:hover {
+  color: #FEB703;
 }/*# sourceMappingURL=style.css.map */
