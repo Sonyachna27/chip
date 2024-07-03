@@ -20,4 +20,8 @@ margin-bottom: 30px;
 }
 .moving__item{
 	background-color: $--silver-white;
+	transition: .3s ease-in-out;
+	&:hover{
+		background-color: $--yellow-background;
+	}
 }

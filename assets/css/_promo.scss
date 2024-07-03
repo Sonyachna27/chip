@@ -1,0 +1,31 @@
+.promo{
+	border-radius: 60px;
+	background-color: $--silver-white;
+	@media screen and (max-width:767px) {
+		overflow: hidden;
+	}
+}
+.promo__container{
+	display: flex;
+	@media screen and (max-width:767px) {
+		flex-direction: column;
+		gap: 40px;
+	}
+}
+.promo__descr{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	justify-content: center;
+	@media screen and (max-width:767px) {
+		width: 100%;	
+		padding: 40px 0;	
+	}
+	& .contact-link{
+		@media  screen  and (max-width:767px){
+			max-width: 100%;
+			width: 100%;			
+		}
+	}
+}
