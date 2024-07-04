@@ -1,6 +1,9 @@
 .main{
 	background-color: $--silver-white;
 	border-radius: 0px 0px 60px 60px;
+	&.yellow{
+		background-color: $--yellow-background;
+	}
 }
 .main__container{
 	 display: flex;

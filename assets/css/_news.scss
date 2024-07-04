@@ -9,7 +9,7 @@
 }
 .news{
 	border-radius: 50px 50px 60px 60px;
-	height: auto;
+	height: 100%;
 	max-width: 100%;
 	width: 100%;
 	flex-grow: 1;
@@ -27,8 +27,7 @@
 .news__img{
 	position: relative;
 	border-radius: 50px 50px 0px 0px;
-	max-height: 270px;
-	height: 100%;
+	height: 270px;
 	flex-grow: 1;
 	position: relative;
 	&::after{
@@ -54,23 +53,14 @@
 		object-fit: cover;
 		border-radius: inherit;
 	}
+	& .express{
+		position: absolute;
+		top: 40px;
+		left: 40px;
+	}
 	
 }
-.express{
-	position: absolute;
-	padding: 10px;
-	top: 40px;
-	left: 40px;
-	width: fit-content;
-	background-color: $--dark-greenish-blue;
-	border-radius: 500px;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: 140%; 
-	color: $--white;
-	z-index: 1;
-}
+
 .news__content{
 	padding: 30px;
 	background-color: $--white;
@@ -79,7 +69,6 @@
 	gap: 5px;
 	border-radius: 0px 0px 60px 60px;
 	flex-grow: 1;
-	flex:  1 1 45%;
 	& h3{
 		@include titleH4;
 		line-height: 130%;
