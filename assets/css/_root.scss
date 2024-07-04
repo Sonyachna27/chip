@@ -18,6 +18,11 @@
 	src: url(../fonts/RedHatDisplay-Bold.ttf);
 	font-weight: 700;
 }
+@font-face {
+	font-family: "Bad script";
+	src: url(../fonts/BadScript-Regular.ttf);
+	font-weight: 400;
+}
 
 // variables
 $--black-silver:#283441;
@@ -276,7 +281,7 @@ body{
 	&:after{
 		content: '';
 		width: 100%;
-		height: 125px;
+		height: 135px;
 		background-image: url(../images/step-left.svg);
 		background-position: right;
 		background-repeat: no-repeat;
@@ -476,4 +481,124 @@ body{
 		background-color: $--selected-yellow;
 		
 	}
+}
+.breadcrumbs__container{
+	padding: 40px 0 20px;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 5px;
+	& a{
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%; 
+		color: $--dark-greenish-blue;
+	}
+	& span{
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%; 
+		color: #A6A6A6;
+	}
+}
+.express{
+	padding: 10px;
+	width: fit-content;
+	background-color: $--dark-greenish-blue;
+	border-radius: 500px;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 140%; 
+	color: $--white;
+	z-index: 1;
+}
+.page-main {
+	display: flex;
+	gap: 40px;
+	margin-top: 40px;
+	@media screen and (max-width: 980px) {
+	  flex-direction: column;
+	}
+  }
+  .main-content {
+	width: 75%;
+	@media screen and (max-width: 980px) {
+	  width: 100%;
+	}
+  }
+  .navbar {
+	width: 25%;
+	@media screen and (max-width: 980px) {
+	  width: 100%;
+	}
+  
+	& h3 {
+	  margin-bottom: 30px;
+	}
+	& .btn-blue{
+		max-width: 100%;
+		width: 100%;
+	}
+  }
+  .navbar__wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 20px;
+	& h3{
+		margin-bottom: 0;
+	}
+	& .news__img{
+		height: 230px;
+	}
+  }
+
+  .scrolling__title {
+    width: 49%;
+    position: sticky;
+    top: 150px;
+    height: 100%;
+    @media screen and (max-width: 1023px) {
+      top: 0;
+      position: static;
+      width: 100%;
+    }
+  }
+
+  .scrolling_item {
+    display: flex;
+	flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 60px;
+    position: sticky;
+    transition: all 0.4s ease-in-out 0s;
+    min-height: 268px;
+    height: 100%;
+	flex-grow: 1;
+	border-radius: 60px;
+	border: 1px solid $--dark-greenish-blue;
+	background: $--yellow-background;
+    &:not(:first-of-type) {
+      margin-top: -10px;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 30px;
+	  min-height: 232px;
+    }
+	& img{
+		height: 1px;
+		width: 100%;
+		object-fit: cover;
+	}
+  }
+
+.scrolling {
+  width: 69%;
+  @media screen and (max-width:1023px) {
+	width: 100%;
+  }
 }

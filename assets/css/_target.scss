@@ -88,3 +88,42 @@
 		padding: 20px;
 	}
 }
+.target__name{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	padding: 110px 40px;
+
+@media screen and (max-width:1023px) {
+	padding: 130px 40px;
+}
+	&:after{
+		content: '';
+		position: absolute;
+		top: 40px;
+			left: 40px;
+			width: calc(100% - 80px);
+			height: calc(100% - 80px);
+			z-index: 0;
+			object-fit: contain;
+			z-index: 0;
+			background: url(../images/target-bg.svg) center center / 90% no-repeat;
+			@media screen and (max-width:1023px) {
+				background: url(../images/target-bg.svg) center center/77% no-repeat;
+			}
+		}
+	& p{
+		font-family: "Bad script";
+		font-size: 30px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		z-index: 1;
+		margin-bottom: 0;
+		@media screen and (min-width:1200px) {
+			font-size: 40px;
+		}
+	
+	}
+}

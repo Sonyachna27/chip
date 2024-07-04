@@ -199,6 +199,33 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 
+	const accordionItemsProduct = document.querySelectorAll(".accord-item");
+	if (accordionItemsProduct) {
+	  accordionItemsProduct.forEach((item) => {
+		item.addEventListener("click", function () {
+		  this.classList.toggle("active");
+		});
+	  });
+	}
+  
+	const stikyElement = document.querySelectorAll(".scrolling_item");
+	const resizeStikyElement = () => {
+	  windowInnerWidth = window.innerWidth; 
+  
+	  if (windowInnerWidth >= 1024 && stikyElement) {
+		stikyElement.forEach((stiky, index) => {
+		  stiky.style.top = `calc(100px + ${50 * index}px)`;
+		});
+	  } else if (windowInnerWidth <= 1023 && stikyElement) {
+		stikyElement.forEach((stiky, index) => {
+		  stiky.style.top = `calc(50px + ${50 * index}px)`;
+		});
+	  }
+	};
+	resizeStikyElement();
+	window.addEventListener("resize", resizeStikyElement);
+
+	  // функція для аккордеону
 
 	
 

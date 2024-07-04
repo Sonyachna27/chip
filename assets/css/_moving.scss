@@ -21,6 +21,9 @@ margin-bottom: 30px;
 .moving__item{
 	background-color: $--silver-white;
 	transition: .3s ease-in-out;
+	&.yellow  {
+		background-color: $--yellow-background;
+	}
 	&:hover{
 		background-color: $--yellow-background;
 	}

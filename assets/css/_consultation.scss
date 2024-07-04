@@ -2,6 +2,9 @@
 	padding: 80px 0;
 	background-color: $--silver-white;
 	border-radius: 60px;
+	&.yellow{
+		background-color: $--yellow-background;
+	}
 	@media screen and (max-width:767px) {
 		padding: 40px 0;
 	}
