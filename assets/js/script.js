@@ -227,6 +227,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	  // функція для аккордеону
 
+
+	  var today = new Date();
+	  var dd = String(today.getDate()).padStart(2, '0');
+	  var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+	  var yyyy = today.getFullYear();
+	  
+	  today = yyyy + '-' + mm + '-' + dd;
+	  
+	  dateInput = document.querySelector('.input_date');
+	  dateInput.setAttribute('min', today);
+	  dateInput.value = today;
 	
 
 }); //кінець DOMContentLoaded
