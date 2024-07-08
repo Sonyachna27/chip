@@ -1,3 +1,20 @@
+window.addEventListener('load', function () {
+	let progressBar = document.querySelector('.preloader__progress');
+	let progressValue = 0;
+	let interval = setInterval(increaseProgress, 50);
+
+	function increaseProgress() {
+		progressValue += 1;
+		progressBar.style.backgroundSize = progressValue + '%';
+		progressBar.setAttribute('aria-valuenow', progressValue);
+		document.querySelector('.preload-text').textContent = progressValue + '%';
+		if (progressValue >= 100) {
+			clearInterval(interval);
+			document.querySelector('.preloader').style.display = 'none';
+		}
+	}
+});
+
 document.addEventListener("DOMContentLoaded", function () {
 
 	const resizeMenuBtn = document.querySelector('.resize-menu');
@@ -225,8 +242,92 @@ document.addEventListener("DOMContentLoaded", function () {
 	resizeStikyElement();
 	window.addEventListener("resize", resizeStikyElement);
 
-	  // функція для аккордеону
+	  
 
+	  dateInput = document.querySelector('.input_date');
+	  if(dateInput){
+		var today = new Date();
+	  var dd = String(today.getDate()).padStart(2, '0');
+	  var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+	  var yyyy = today.getFullYear();
+	  
+	  today = yyyy + '-' + mm + '-' + dd;
+	  
+	  dateInput.setAttribute('min', today);
+	  dateInput.value = today;
+	  }
+	  
+		if(document.getElementById('name')) {
+
+			const commentForm = document.getElementById('comment-form');
+			const commentName = document.getElementById('name');
+			const commentSurname = document.getElementById('lastName');
+			const commentText = document.getElementById('message');
+			const sick = document.getElementById('sick');
+			const commentButton = document.getElementById('comment-button');
+			
+			commentButton.addEventListener('click', function(e) {
+			  const ratingElement = document.querySelector('input[name="rating"]:checked');
+			  const rating = ratingElement ? ratingElement.value : '';
+				const commentPost = this.getAttribute( 'data-post-id' );
+				e.preventDefault();
+				var xhr = new XMLHttpRequest();
+				if(commentName.value && commentSurname && commentText) {
+					xhr.open( 'POST', homepage_js.ajax_url, true );
+					xhr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+					xhr.send( 'comment_name=' + commentName.value + '&comment_surname=' + commentSurname.value + '&rating=' + rating + '&sick=' + sick.value + '&comment_text=' + commentText.value + '&commentPost=' + commentPost + '&action=new_comment_function');
+					xhr.onload = function () {
+						if (this.status >= 200 && this.status < 400) {
+							commentForm.reset();
+							alert(homepage_js.currentLang === 'uk' ? 'Ваш відгук було надіслано' : 'Ваш отзыв был отправлен');
+							// commentForm.textContent = '';
+						} else {
+						  alert(homepage_js.currentLang === 'uk' ? 'Заповніть форму' : 'Заполните форму')
+						}
+					  }
+				} else {
+				  alert(homepage_js.currentLang === 'uk' ? 'Заповніть форму' : 'Заполните форму')
+				}
+			
+			});
+		}
 	
 
+	const popUpBook = document.querySelector('.popup-book');
+	const popupBg = document.querySelectorAll('.popup-bg');
+
+  if(popUpBook){
+   const closePopUpBook = document.querySelector('.popup-book-close');
+   const popupButtons = document.querySelectorAll('[data-button="popup-book"]');
+	
+   popupButtons.forEach((popBtn) => {
+    popBtn.addEventListener('click', () =>{
+		popUpBook.classList.add('open');
+    })
+  });
+  closePopUpBook.addEventListener('click', () =>{
+    popUpBook.classList.remove('open');
+  });
+  popupBg.forEach((bg)=> bg.addEventListener('click', () =>{
+	popUpBook.classList.remove('open');
+  }));
+}
+
+const popUpContact = document.querySelector('.popup-contact');
+	if(popUpContact){
+		function initCallPopup(){
+			const closePopUpContact = document.querySelector('.popup-contact-close');
+			popUpContact.classList.add('open');
+			popupBg.forEach((bg)=> bg.addEventListener('click', () =>{
+				popUpContact.classList.remove('open');
+			  }));
+			  closePopUpContact.addEventListener('click', () => {
+				popUpContact.classList.remove('open');
+			  })
+		}
+		setTimeout(initCallPopup, 30000);
+	}
+
+
+	
 }); //кінець DOMContentLoaded
