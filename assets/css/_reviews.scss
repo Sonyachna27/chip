@@ -2,10 +2,20 @@
 	position: relative;
 	padding-bottom: 40px;
 }
+.response-section{
+	& h1{
+		width: fit-content;
+		margin: 0 auto;
+		margin-bottom: 40px;
+	}
+}
 .reviews{
 	padding: 100px 0;
 	border-radius: 60px;
-	background-color: $--silver-white;
+	&.blue{
+		background-color: $--silver-white;
+
+	}
 	&.yellow{
 		background-color: $--yellow-background;
 	}
@@ -23,7 +33,29 @@
 		}
 	}
 }
-
+.response__container{
+	display: flex;
+	padding: 60px;
+	border-radius: 60px;
+	background-color: $--silver-white;
+	gap: 60px;
+	align-items: center;
+	@media screen and (max-width:1023px) {
+		flex-direction: column;
+	}
+	@media screen and (max-width:767px) {
+		padding: 30px 20px;
+	}
+}
+.response__wrap{
+	width: 51.5%;
+	& h2{
+		margin-bottom: 30px;
+	}
+	@media screen and (max-width:1023px) {
+		width: 100%;
+	}
+}
 .response{
 	padding: 40px;
 	border-radius: 30px;
