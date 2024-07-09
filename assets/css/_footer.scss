@@ -27,9 +27,6 @@
 				max-width: 36px;
 				max-height: 36px;
 			}
-			&:hover{
-				color: $--white;
-			}
 		}
 		& p{
 			@include titleH3;
@@ -147,6 +144,9 @@ ul.footer-menu{
   }
   .footer__copy{
 	background-color: $--selected-yellow;
+	@media screen and (max-width:1023px) {
+		padding-bottom: 59px;
+	}
   }
   .footer__copy_wrap{
 	padding: 20px 0;
@@ -176,3 +176,21 @@ ul.footer-menu{
 		}
 	}
   }
+  .sticky__links{
+	background-color: $--selected-yellow;
+	padding: 10px 0;
+	position: fixed;
+	bottom:0;
+	left: 0;
+	width: 100%;
+	z-index: 49;
+	@media screen and (min-width:1024px) {
+		display: none;
+	}
+}
+.sticky__wrap{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}

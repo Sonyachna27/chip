@@ -1,3 +1,4 @@
+//функція прелоадера 
 window.addEventListener('load', function () {
 	let progressBar = document.querySelector('.preloader__progress');
 	let progressValue = 0;
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	const resizeMenuBtn = document.querySelector('.resize-menu');
 	const htmlElement = document.querySelector("html");
 	const headerNav = document.querySelector(".header__nav");
+	const headerNavigation = document.querySelector(".header__navigation");
 	const navLinks = document.querySelectorAll("nav a");
 	const headerTop = document.querySelector(".header__top");
 	const headerBottom = document.querySelector(".header__bottom");
@@ -40,7 +42,49 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 
+// функція для навігації аби рухалась за скролом бо негарно без неї
+let lastScrollTop = 0;
 
+window.addEventListener("scroll", function () {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (windowInnerWidth >= 1024) {
+	if (scrollTop > lastScrollTop) {
+	  if (scrollTop > 100) {
+		headerNavigation.classList.add("fixed-header-nav");
+		headerNavigation.style.animationName = "smoothScroll";
+	  }
+	} else if (scrollTop <= 0) {
+	  headerNavigation.classList.remove("fixed-header-nav");
+	  headerNavigation.style.animationName = "removeSmoothScroll";
+	}
+	lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  }
+});
+
+const sections = document.querySelectorAll('.sectionScroll'); 
+
+const options = {
+  root: document,
+  rootMargin: '0px',  
+  threshold: 0.1 
+};
+
+const callback = function(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('animate')) { 
+        entry.target.classList.add('animate');
+      } 
+      else if (!entry.isIntersecting && entry.target.classList.contains('animate')) { // Видалити клас .animate, якщо елемент виходить з області видимості
+        entry.target.classList.remove('animate');
+      }
+    });
+  };
+  
+const observer = new IntersectionObserver(callback, options);
+
+sections.forEach((section) => observer.observe(section)); 
+	
 	//гарний скрол по сторінці
 	document.querySelectorAll('a[href^="#"').forEach(link => {
 
@@ -225,6 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	  });
 	}
   
+	//для блоків гармошкою
 	const stikyElement = document.querySelectorAll(".scrolling_item");
 	const resizeStikyElement = () => {
 	  windowInnerWidth = window.innerWidth; 
@@ -243,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	window.addEventListener("resize", resizeStikyElement);
 
 	  
-
+// для інпуту з датою  аби встановлювалась поточна дата
 	  dateInput = document.querySelector('.input_date');
 	  if(dateInput){
 		var today = new Date();
@@ -256,6 +301,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	  dateInput.setAttribute('min', today);
 	  dateInput.value = today;
 	  }
+
+	 //для перевірки форми з відгуками 
 	  
 		if(document.getElementById('name')) {
 
@@ -292,10 +339,10 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 		}
 	
-
+// функції для попапів 
 	const popUpBook = document.querySelector('.popup-book');
 	const popupBg = document.querySelectorAll('.popup-bg');
-
+ // функція для попап, який з заповненням форми при натискані кнопки Book
   if(popUpBook){
    const closePopUpBook = document.querySelector('.popup-book-close');
    const popupButtons = document.querySelectorAll('[data-button="popup-book"]');
@@ -312,7 +359,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	popUpBook.classList.remove('open');
   }));
 }
-
+// функція попапу який з'являється через 30 секунд після заванатаження сторінки
 const popUpContact = document.querySelector('.popup-contact');
 	if(popUpContact){
 		function initCallPopup(){
