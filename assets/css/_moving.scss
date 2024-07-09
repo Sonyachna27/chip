@@ -23,6 +23,15 @@ margin-bottom: 30px;
 	transition: .3s ease-in-out;
 	&.yellow  {
 		background-color: $--yellow-background;
+		&:hover{
+			background-color: #FFDD87;
+		}
+	}
+	.yellow & {
+		background-color: $--yellow-background;
+		&:hover{
+			background-color: #FFDD87;
+		}
 	}
 	&:hover{
 		background-color: $--yellow-background;

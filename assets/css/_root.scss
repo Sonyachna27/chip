@@ -159,7 +159,9 @@ body{
 	}
 	header &{
 		max-width: 200px;
-		
+		@media screen and (max-width:550px) {
+			max-width: 150px;
+		}
 	}
 	footer & {
 		max-width: 320px;
@@ -659,4 +661,34 @@ body{
   @media screen and (max-width:1023px) {
 	width: 100%;
   }
+}
+
+.sectionScroll {
+    opacity: 0;
+    visibility: hidden;
+    // transform: translate(0px, 50px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.animate {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 0px);
+    animation: example 1s  ;
+}
+
+
+@keyframes example {
+    from {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(var(--startScrollTop, 150px)); 
+        // transform: translate(-100%, 100vh); 
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(calc(var(--scrollTop) / 10)); 
+        // transform: translate(0, 0); 
+    }
 }
