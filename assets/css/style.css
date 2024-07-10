@@ -1073,7 +1073,7 @@ footer .logo {
 }
 
 .header__mob-menu {
-  position: absolute;
+  position: fixed;
   height: 100%;
   gap: 10px;
   top: 75px;
@@ -1179,6 +1179,11 @@ footer .logo {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 1023px) {
+  .footer__top-wrap {
+    flex-wrap: wrap;
+  }
+}
 @media screen and (max-width: 767px) {
   .footer__top-wrap {
     flex-direction: column;
@@ -1194,6 +1199,11 @@ footer .logo {
   font-weight: 400;
   color: #022F45;
   gap: 60px;
+}
+@media screen and (max-width: 1023px) {
+  .footer__top-wrap .btn {
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 767px) {
   .footer__top-wrap .btn {
