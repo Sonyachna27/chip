@@ -365,10 +365,6 @@ const popUpContact = document.querySelector('.popup-contact');
 		function initCallPopup() {
 			const popupWrapper = document.querySelectorAll('.popup');
 			const closePopUpContact = document.querySelector('.popup-contact-close');
-			const headerTopHeight = headerTop.offsetHeight;
-			const headerBottomHeight = headerBottom.offsetHeight;
-			headerMobMenu.style.top = headerTopHeight + headerBottomHeight + `px`;
-			headerMobMenu.style.height = `calc(100vh - (${headerTopHeight}px + ${headerBottomHeight}px)`;
 			popUpContact.classList.add('open');
 			popupBg.forEach((bg)=> bg.addEventListener('click', () =>{
 				popUpContact.classList.remove('open');
@@ -376,9 +372,7 @@ const popUpContact = document.querySelector('.popup-contact');
 			  closePopUpContact.addEventListener('click', () => {
 				popUpContact.classList.remove('open');
 			  })
-			// popupWrapper.forEach((pop) => {
-			// 	pop.style.top = `calc((${headerTopHeight}px + ${headerBottomHeight}px)`;
-			// })
+			
 		}
 		setTimeout(initCallPopup, 30000);
 	}
