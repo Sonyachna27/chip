@@ -41,9 +41,10 @@
 	}
 	@media screen and (max-width:767px) {
 		min-width: calc(50% - 20px);
+		max-width: fit-content;
 	}
 	@media screen and (max-width:550px) {
-		min-width: calc(80% - 20px);
+		min-width: fit-content;
 	}
 	& span{
 		padding: 2px 15px;

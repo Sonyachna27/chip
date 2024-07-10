@@ -6,6 +6,10 @@
 }
 .news__title{
 	margin-bottom: 40px;
+	& h2{
+		text-wrap: balance;
+	max-width: 100%;
+	}
 }
 .news{
 	border-radius: 50px 50px 60px 60px;

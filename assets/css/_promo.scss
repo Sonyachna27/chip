@@ -9,17 +9,23 @@
 	border-radius: 60px;
 	background-color: $--silver-white;
 	padding: 0 87px 0 60px;
+	justify-content: space-between;
 	 &.yellow{
 		background-color: $--yellow-background;
+	}
+	@media screen and (max-width:1023px) {
+		padding: 0 30px;
+      
+        overflow: hidden;
 	}
 	@media screen and (max-width:767px) {
 		flex-direction: column;
 		gap: 40px;
-		padding: 20px;
+		padding: 20px 20px 0 20px;
 	}
 }
 .promo__descr{
-	width: 50%;
+	width: calc(50% - 60px);
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
@@ -38,7 +44,7 @@
 }
 .promo__img{
 	height: auto;
-	width: 50%;
+	width: 52%;
 	& img{
 		max-width: 100%;
 		width: 100%;
