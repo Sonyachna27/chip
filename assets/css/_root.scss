@@ -67,6 +67,11 @@ body{
 	font-family: "Red Hat Display";
 	color: $--dark-greenish-blue;
 }
+main{
+	@media screen and (max-width:1023px) {
+		margin-top: 77px;
+	}
+}
 .mb-m{
 	margin-bottom: 60px;
 }
@@ -277,6 +282,9 @@ body{
 	height: auto;
 	overflow: hidden; 
       position: relative;
+	  @media screen and (max-width:767px) {
+		margin-bottom: 65px;
+	}
 	  @media screen and (max-width:550px) {
 		height: 55px;
 	}

@@ -177,6 +177,12 @@ body {
   color: #022F45;
 }
 
+@media screen and (max-width: 1023px) {
+  main {
+    margin-top: 77px;
+  }
+}
+
 .mb-m {
   margin-bottom: 60px;
 }
@@ -412,6 +418,11 @@ footer .logo {
   height: auto;
   overflow: hidden;
   position: relative;
+}
+@media screen and (max-width: 767px) {
+  .step {
+    margin-bottom: 65px;
+  }
 }
 @media screen and (max-width: 550px) {
   .step {
@@ -2133,20 +2144,27 @@ ul.area__list li a:hover {
   border-radius: 60px;
   background-color: #ECF1F5;
   padding: 0 87px 0 60px;
+  justify-content: space-between;
 }
 .promo__container.yellow {
   background-color: #FFF3D6;
+}
+@media screen and (max-width: 1023px) {
+  .promo__container {
+    padding: 0 30px;
+    overflow: hidden;
+  }
 }
 @media screen and (max-width: 767px) {
   .promo__container {
     flex-direction: column;
     gap: 40px;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
   }
 }
 
 .promo__descr {
-  width: 50%;
+  width: calc(50% - 60px);
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -2168,7 +2186,7 @@ ul.area__list li a:hover {
 
 .promo__img {
   height: auto;
-  width: 50%;
+  width: 52%;
 }
 .promo__img img {
   max-width: 100%;
@@ -2195,6 +2213,10 @@ ul.area__list li a:hover {
 
 .news__title {
   margin-bottom: 40px;
+}
+.news__title h2 {
+  text-wrap: balance;
+  max-width: 100%;
 }
 
 .news {
@@ -2312,6 +2334,11 @@ ul.area__list li a:hover {
   padding: 38px;
   background-color: #ECF1F5;
   border-radius: 60px;
+}
+@media screen and (max-width: 767px) {
+  .article-news {
+    padding: 18px;
+  }
 }
 
 .state__article {
@@ -2677,11 +2704,14 @@ ul.area__list li a:hover {
 @media screen and (max-width: 767px) {
   .blog__tab {
     min-width: calc(50% - 20px);
+    max-width: -moz-fit-content;
+    max-width: fit-content;
   }
 }
 @media screen and (max-width: 550px) {
   .blog__tab {
-    min-width: calc(80% - 20px);
+    min-width: -moz-fit-content;
+    min-width: fit-content;
   }
 }
 .blog__tab span {
@@ -3688,6 +3718,12 @@ form .rating > input {
   left: 0;
   height: 100dvh;
   z-index: 50;
+  overflow-x: auto;
+}
+@media screen and (max-width: 767px) {
+  .popup {
+    top: 77px;
+  }
 }
 
 .popup-book.open {
@@ -3733,6 +3769,11 @@ form .rating > input {
 @media screen and (max-width: 1023px) {
   .popup-contact .popup-wrap {
     padding: 60px 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .popup-contact .popup-wrap {
+    max-width: 462px;
   }
 }
 .popup-wrap .close {
