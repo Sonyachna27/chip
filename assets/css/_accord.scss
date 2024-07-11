@@ -85,8 +85,11 @@
 	padding: 4px 20px;
 	background-color: $--white;
 	border-radius: 500px;
+	max-width:60px;
 	@media screen and (max-width:767px) {
 		font-size: 12px;
+		max-width:32px;
+		padding: 4px 10px;
 	}
   }
   .accord-item:hover .faq__accord-item-top,

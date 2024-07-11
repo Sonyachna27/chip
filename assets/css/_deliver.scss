@@ -27,7 +27,7 @@
 	& .area__map{
 		width: 100%;
 		& img{
-			aspect-ratio: 1 / -.5;
+			aspect-ratio: 1 / .5;
 			@media screen and (max-width:550px) {
 				object-position: 20% 50%;
 				aspect-ratio: 1 ;

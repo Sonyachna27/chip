@@ -3,6 +3,9 @@
 		width: fit-content;
 		margin: 0 auto;
 		margin-bottom: 60px;
+		@media screen and (max-width:767px) {
+			margin-bottom: 40px;
+		}
 	}
 }
 .structure__form{
@@ -14,6 +17,7 @@
 	}
 	@media screen and (max-width:767px) {
 		padding: 40px 20px;
+		border-radius: 40px;
 	}
 	& h2{
 		margin: 0 auto;

@@ -1,6 +1,9 @@
 .main{
 	background-color: $--silver-white;
 	border-radius: 0px 0px 60px 60px;
+	@media screen and (max-width:767px) {
+		border-radius: 0 0 40px 40px;
+	}
 	&.yellow{
 		background-color: $--yellow-background;
 	}

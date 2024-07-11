@@ -47,6 +47,9 @@
 	position: relative;
 	margin: 0 auto;
 	position: relative;
+	@media screen and (max-width:767px) {
+		border-radius: 40px;
+	}
 	
 	.popup-contact &{
 		max-width: fit-content;
