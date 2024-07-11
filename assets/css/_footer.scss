@@ -48,10 +48,13 @@
 .footer__center-top{
 	width: 100%;
 	padding: 60px 0;
+	border-bottom: 1px solid #9AACB5;
+	margin-bottom: 40px;
 }
 .footer__center-menu{
 	display: flex;
 	gap: 14px;
+	padding-bottom: 60px;
 	@media screen and (max-width:1023px) {
 		flex-direction: column;
 	}
@@ -110,6 +113,12 @@ ul.footer-menu{
 	gap: 10px;
 	padding: 20px 0;
 	border-bottom: 1px solid $--silver-blue;
+	&:nth-of-type(1){
+		padding: 0 0 20px 0;
+	}
+	&:nth-last-of-type(1){
+		border-bottom: none;
+	}
 	& a{
 		font-size: 22px;
 		font-style: normal;

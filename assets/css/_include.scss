@@ -46,6 +46,7 @@
 	border-radius: 60px;
 	border: 1px solid $--dark-greenish-blue;
 	background: $--silver-white;
+
 	.yellow &{
 		background-color: $--yellow-background;
 	}
@@ -58,7 +59,8 @@
 	 @media screen and (max-width:980px) {
 		width: 100%;
 	}
-	 @media screen and (max-width:550px) {
+	 @media screen and (max-width:767px) {
 		padding: 30px;
+		border-radius: 40px;
 	 }
 }

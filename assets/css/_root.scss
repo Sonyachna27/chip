@@ -55,6 +55,7 @@ h2{
 		background: $--white;
 		padding: 5px 15px;
 		margin-left: 10px;
+		text-wrap: nowrap;
 	}
 }
 h3{
@@ -74,15 +75,21 @@ main{
 }
 .mb-m{
 	margin-bottom: 60px;
+	@media screen and (max-width:767px) {
+		margin-bottom: 40px;
+	}
 }
 .mb-l{
 	margin-bottom: 120px;
 	@media screen and (max-width:1023px) {
-		margin-bottom: 60px;
-	}
-	@media screen and (max-width:550px) {
-		margin-bottom: 30px;
-	}
+		margin-bottom: 80px;
+	}	
+}
+section{
+	margin-bottom: 120px;
+	@media screen and (max-width:1023px) {
+		margin-bottom: 80px;
+	}	
 }
 .btn{
 	display: flex;
@@ -277,44 +284,36 @@ main{
 .step{
 	width: 100%;
     position: relative;
-    margin-bottom: 125px;
     padding-left: 5%;
 	height: auto;
 	overflow: hidden; 
-      position: relative;
+    position: relative;
+	margin-bottom: 60px;
 	  @media screen and (max-width:767px) {
-		margin-bottom: 65px;
+		margin-bottom: 40px;
+		height: 70px;
 	}
-	  @media screen and (max-width:550px) {
-		height: 55px;
-	}
-	&:after{
-		content: '';
-		width: 100%;
-		height: 135px;
-		background-image: url(../images/step-left.svg);
-		background-position: right;
-		background-repeat: no-repeat;
-		display: block;
-		@media screen and (max-width:1440px) {
-			background-position: 0% 44%;
-		}
-		@media screen and (max-width:550px) {
-			background-position: 100% 44%;
-			height: 55px;
-			background-image: url(../images/step-left-short.svg);
-		}
-		@media screen and (max-width:380px) {
-			background-position: -10% 44%;
-		}
-		@media screen and (min-width:1441px) {
-			background-position: auto;
-		}
-	}
+	
 	&.step-left{
 		transform: scaleX(-1);
 	}
-
+& img{
+	width: 100%;
+	height: 100%;
+	@media screen and (max-width:550px) {
+		object-fit: contain;
+	}
+}
+.short{
+	@media screen and (min-width:768px) {
+		display: none;
+	}
+}
+.long{
+	@media screen and (max-width:767px) {
+		display: none;
+	}
+}
 }
 
 .title-center{
@@ -323,9 +322,8 @@ main{
 	justify-content: center;
 	margin-bottom: 30px;
 	@media screen and (max-width:767px) {
-		flex-direction: column;
+		flex-wrap: wrap;
 		text-align: center;
-		gap: 10px;
 	}
 }
 .title-space{
@@ -333,13 +331,16 @@ main{
 	align-items: center;
 	justify-content: space-between;
 	gap: 20px;
+	margin-bottom: 30px;
 	& h2{
 		max-width: 70%;
+		@media screen and (max-width:767px) {
+			max-width: 100%;
+		}
 	}
 	@media screen and (max-width:767px) {
 		flex-direction: column;
 		text-align: center;
-		margin-bottom: 30px;
 	}
 }
 .grid-container{
@@ -491,7 +492,6 @@ main{
 		line-height: 140%;
 		margin-bottom: 0;
 	}
-
 }
 .stars{
 	display: flex;
@@ -578,7 +578,7 @@ main{
 	border-radius: 500px;
 	font-size: 14px;
 	font-style: normal;
-	font-weight: 700;
+	font-weight: 500;
 	line-height: 140%; 
 	color: $--white;
 	z-index: 1;

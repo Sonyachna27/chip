@@ -15,6 +15,9 @@ ul.area__list{
 	border: $--dark-greenish-blue 1px solid;
 	border-radius: 40px;
 	flex: 1 1 40.5%;
+	@media screen and (max-width:767px) {
+		border-radius: 30px;
+	}
 	&.yellow{
 		background-color: $--yellow-background;
 	}
