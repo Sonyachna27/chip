@@ -3,6 +3,9 @@
 		width: fit-content;
 		margin: 0 auto;
 		margin-bottom: 60px;
+		@media screen and (max-width:767px) {
+			margin-bottom: 40px;
+		}
 	}
 }
 .blog__tabs{

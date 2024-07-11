@@ -2,7 +2,7 @@
 window.addEventListener('load', function () {
 	let progressBar = document.querySelector('.preloader__progress');
 	let progressValue = 0;
-	let interval = setInterval(increaseProgress, 50);
+	let interval = setInterval(increaseProgress, 15);
 
 	function increaseProgress() {
 		progressValue += 1;
@@ -242,12 +242,12 @@ sections.forEach((section) => observer.observe(section));
 		createBtn.addEventListener("click", function(e) {
 			e.preventDefault();
 			articleContent.forEach(function(content) {
-				if (createBtn.innerText === 'Read Less') {
+				if (content.style.height >= 482) {
 					content.style.height = "482px";
-					createBtn.innerText = 'Read more';
+					createBtn.innerText = 'Read more'; 
 				} else {
 					content.style.height = "auto";
-					createBtn.innerText = 'Read Less';
+					createBtn.style.display = 'none';
 				}
 			});
 		});
@@ -259,6 +259,24 @@ sections.forEach((section) => observer.observe(section));
 			}
 		});
 	}
+
+
+	const articleContainers = document.querySelectorAll('.article-container');
+	articleContainers.forEach(container => {
+		const articleContent = container.querySelector('.state__article');
+		if (articleContent.scrollHeight > 482) {
+			const createBtn = document.createElement('button');
+			createBtn.classList.add('article-btn');
+			createBtn.innerText = 'Read more';
+			container.appendChild(createBtn);
+
+			createBtn.addEventListener("click", function(e) {
+				e.preventDefault();
+				articleContent.style.maxHeight = "none";
+				createBtn.style.display = 'none';
+			});
+		}
+	});
 
 	const accordionItemsProduct = document.querySelectorAll(".accord-item");
 	if (accordionItemsProduct) {
@@ -362,10 +380,16 @@ sections.forEach((section) => observer.observe(section));
 // функція попапу який з'являється через 30 секунд після заванатаження сторінки
 const popUpContact = document.querySelector('.popup-contact');
 	if(popUpContact){
-		function initCallPopup() {
+		// function initCallPopup() {
 			const popupWrapper = document.querySelectorAll('.popup');
 			const closePopUpContact = document.querySelector('.popup-contact-close');
-			popUpContact.classList.add('open');
+			const popupContactButtons = document.querySelectorAll('[data-button="popup-contact"]');
+			
+			popupContactButtons.forEach((popBtn) => {
+				popBtn.addEventListener('click', () =>{
+					popUpContact.classList.add('open');
+				})
+			  });
 			popupBg.forEach((bg)=> bg.addEventListener('click', () =>{
 				popUpContact.classList.remove('open');
 			  }));
@@ -373,8 +397,8 @@ const popUpContact = document.querySelector('.popup-contact');
 				popUpContact.classList.remove('open');
 			  })
 			
-		}
-		setTimeout(initCallPopup, 30000);
+		// }
+		// setTimeout(initCallPopup, 30000);
 	}
 
 

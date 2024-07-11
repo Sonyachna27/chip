@@ -47,7 +47,6 @@
 
 
 .main__item{
-	
 	background-color: $--white;
 	max-width: 170px;
 	@media screen and (max-width:767px) {
@@ -55,6 +54,13 @@
 	}
 	@media screen and (max-width:420px) {
 		min-width: 65%;
+	}
+	& p{
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%;
+		margin-bottom: 0;
 	}
 
 }
@@ -70,50 +76,5 @@
 		height: 100%;
 		object-fit: contain;
 	}
-	.car,
-	.dell{
-	position: absolute;
-	aspect-ratio: 1;
-	top:0;
-	left: inherit;
-	right: 0;
-		@media screen and (max-width:1023px) {
-				display: none;
-		}
-	}
-	.car{
-		max-width: 110px;
-		max-height: 110px;
-		transform: translate(-100%, 70%);
-		@media screen and (max-width:1201px) and (min-width:1100px) {
-			max-width: 140px;
-			max-height: 140px;
-			transform: translate(-84%, 18%);
-		}
 
-		@media screen and (min-width:1200px) {
-			transform: translate(-75%, 0%);
-			max-width: 156px;
-			max-height: 156px;
-		}
-		
-		
-		
-	}
-	.dell{
-		max-width: 85px;
-		max-height: 85px;
-		transform: translate(-30%, 153%);
-		@media screen and (min-width:1200px){
-			transform: translate(-25%, 100%);
-			max-width: 117px;
-			max-height: 117px;
-		}
-		@media screen and (min-width:1100px){
-			max-width: 100px;
-			max-height: 102px;
-			transform: translate(-25%, 114%);
-		}
-		
-	}
 }

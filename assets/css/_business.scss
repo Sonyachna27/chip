@@ -12,6 +12,9 @@
   }
   .business__content{
 	& h2{
-		text-wrap: balance;
+		@media screen and (max-width:1023px) {
+			margin-bottom: 30px;
+			text-align: center;
+		}
 	}
   }
