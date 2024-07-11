@@ -20,6 +20,9 @@
 	border: 1px solid $--silver-blue;
 	display: flex;
 	flex-direction: column;
+	@media screen and (max-width:767px) {
+		border-radius: 40px;
+	}
 	&:hover{
 		& .news__img {
 			&::after{
@@ -47,6 +50,9 @@
 		transition: .3s ease-in-out;
 		background-color: rgba(254, 183, 3, 0.4);
 	}
+	@media screen and (max-width:767px) {
+		border-radius: 40px 40px 0 0;
+	}
 	@media screen and (max-width:550px) {
 		max-height: 220px;
 	}
@@ -62,7 +68,6 @@
 		top: 40px;
 		left: 40px;
 	}
-	
 }
 
 .news__content{
@@ -73,6 +78,9 @@
 	gap: 5px;
 	border-radius: 0px 0px 60px 60px;
 	flex-grow: 1;
+	@media screen and (max-width:767px) {
+		border-radius: 0 0 40px 40px;
+	}
 	& h3{
 		@include titleH4;
 		line-height: 130%;
@@ -94,7 +102,6 @@
 	}
 }
 .news-arrows{
-
 	@media screen and (max-width:767px) {
 		display: none;
 	}

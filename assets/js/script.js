@@ -17,7 +17,7 @@ window.addEventListener('load', function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-
+	windowInnerWidth = window.innerWidth; 
 	const resizeMenuBtn = document.querySelector('.resize-menu');
 	const htmlElement = document.querySelector("html");
 	const headerNav = document.querySelector(".header__nav");
@@ -166,7 +166,7 @@ sections.forEach((section) => observer.observe(section));
 	if (reviewsSliderInit){
 		const reviewsSlide = document.querySelectorAll('.reviews-slide');
 		const reviewsArrows = document.querySelector('.reviews-arrows');
-		if(reviewsSlide.length < 2){
+		if(reviewsSlide.length < 2 || innerWidth <= 767){
 			reviewsArrows.style.display = 'none';
 		} else{
 			reviewsArrows.style.display = 'flex';
@@ -200,7 +200,7 @@ sections.forEach((section) => observer.observe(section));
 	if (newsSliderInit){
 		const newsSlide = document.querySelectorAll('.news-slide');
 		const newsArrows = document.querySelector('.news-arrows');
-		if(newsSlide.length < 2){
+		if(newsSlide.length < 2 || innerWidth <= 767 ){
 			newsArrows.style.display = 'none';
 		} else{
 			newsArrows.style.display = 'flex';
@@ -260,24 +260,6 @@ sections.forEach((section) => observer.observe(section));
 		});
 	}
 
-
-	const articleContainers = document.querySelectorAll('.article-container');
-	articleContainers.forEach(container => {
-		const articleContent = container.querySelector('.state__article');
-		if (articleContent.scrollHeight > 482) {
-			const createBtn = document.createElement('button');
-			createBtn.classList.add('article-btn');
-			createBtn.innerText = 'Read more';
-			container.appendChild(createBtn);
-
-			createBtn.addEventListener("click", function(e) {
-				e.preventDefault();
-				articleContent.style.maxHeight = "none";
-				createBtn.style.display = 'none';
-			});
-		}
-	});
-
 	const accordionItemsProduct = document.querySelectorAll(".accord-item");
 	if (accordionItemsProduct) {
 	  accordionItemsProduct.forEach((item) => {
@@ -290,7 +272,7 @@ sections.forEach((section) => observer.observe(section));
 	//для блоків гармошкою
 	const stikyElement = document.querySelectorAll(".scrolling_item");
 	const resizeStikyElement = () => {
-	  windowInnerWidth = window.innerWidth; 
+	 
   
 	  if (windowInnerWidth >= 1024 && stikyElement) {
 		stikyElement.forEach((stiky, index) => {
@@ -322,7 +304,7 @@ sections.forEach((section) => observer.observe(section));
 
 	 //для перевірки форми з відгуками 
 	  
-		if(document.getElementById('name')) {
+		if(document.querySelector('.reviewForm')) {
 
 			const commentForm = document.getElementById('comment-form');
 			const commentName = document.getElementById('name');

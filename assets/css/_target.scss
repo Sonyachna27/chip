@@ -55,13 +55,14 @@
 	@media screen and (max-width:1023px) {
 		width: 100%;
 	}
+	@media screen and (max-width:767px) {
+		border-radius: 30px;
+	}
 	& img{
-		// max-height: 300px;
-		// height: 100%;
 		max-width: 100%;
 		width: 100%;
-		-o-object-fit: cover;
-		object-fit: cover;
+		// -o-object-fit: cover;
+		// object-fit: cover;
 		border-radius: 50px;
 		min-height: 220px;
 		aspect-ratio: 750 / 300;
