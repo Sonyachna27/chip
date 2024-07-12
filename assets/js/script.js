@@ -17,51 +17,81 @@ window.addEventListener('load', function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-	windowInnerWidth = window.innerWidth; 
-	const resizeMenuBtn = document.querySelector('.resize-menu');
-	const htmlElement = document.querySelector("html");
-	const headerNav = document.querySelector(".header__nav");
-	const headerNavigation = document.querySelector(".header__navigation");
 	const navLinks = document.querySelectorAll("nav a");
-	const headerTop = document.querySelector(".header__top");
-	const headerBottom = document.querySelector(".header__bottom");
-	const headerMobMenu = document.querySelector('.header__mob-menu');
-	resizeMenuBtn.addEventListener("click", () => {
-		htmlElement.classList.toggle("open");
-		// висота хедера для встановлення відступу мобільного на кожен клік вимірюємо аби не ставити наглядач
-
-		const headerTopHeight = headerTop.offsetHeight;
-		const headerBottomHeight = headerBottom.offsetHeight;
-		headerMobMenu.style.top = headerTopHeight + headerBottomHeight + `px`;
-		headerMobMenu.style.height = `calc(100vh - (${headerTopHeight}px + ${headerBottomHeight}px)`;
-	});
-
 	navLinks.forEach((link) => {
 		link.addEventListener("click", () => {
 		htmlElement.classList.remove("open");
 		});
 	});
-
-// функція для навігації аби рухалась за скролом бо негарно без неї
-let lastScrollTop = 0;
-
-window.addEventListener("scroll", function () {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (windowInnerWidth >= 1024) {
-	if (scrollTop > lastScrollTop) {
-	  if (scrollTop > 100) {
-		headerNavigation.classList.add("fixed-header-nav");
-		headerNavigation.style.animationName = "smoothScroll";
-	  }
-	} else if (scrollTop <= 0) {
-	  headerNavigation.classList.remove("fixed-header-nav");
-	  headerNavigation.style.animationName = "removeSmoothScroll";
+	let lastScrollTop = 0;
+	const windowInnerWidth = window.innerWidth;
+	const resizeMenuBtn = document.querySelector('.resize-menu');
+	const htmlElement = document.querySelector("html");
+	const headerNavigation = document.querySelector(".header__navigation");
+	const headerTop = document.querySelector(".header__top");
+	const headerBottom = document.querySelector(".header__bottom");
+	const headerMobMenu = document.querySelector('.header__mob-menu');
+	
+	function getVisibleHeight(el) {
+	  const rect = el.getBoundingClientRect();
+	  const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+	  
+	  const topVisible = Math.max(rect.top, 0);
+	  const bottomVisible = Math.min(rect.bottom, windowHeight);
+	  const visibleHeight = bottomVisible - topVisible;
+	  return Math.max(0, Math.min(visibleHeight, rect.height));
 	}
-	lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  }
-});
+	
+	function updateMenuPosition(scrollTop) {
+	  const headerTopHeight = getVisibleHeight(headerTop);
+	  const headerBottomHeight = getVisibleHeight(headerBottom);
+	  const headerNavigationHeight = headerNavigation.offsetHeight;
+	
+	  if (htmlElement.classList.contains('open')) {
+		headerMobMenu.style.top = `${headerTopHeight + headerBottomHeight}px`;
+		  headerMobMenu.style.height = `calc(100vh - ${headerTopHeight + headerBottomHeight}px)`;
+		  if (headerTopHeight <= 0 && headerBottomHeight <= 0) {
+			headerMobMenu.style.top = `${headerNavigationHeight}px`;
+			headerMobMenu.style.height = `calc(100vh + ${headerNavigationHeight}px)`;
+		  }
+	  } else if (scrollTop <= 0) {
+		headerMobMenu.style.top = `- ${headerNavigationHeight}px`;
+		headerMobMenu.style.height = `calc(100vh + ${headerNavigationHeight}px)`;
+	  }
+	}
+	
+	window.addEventListener("scroll", function () {
+	  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	  if (windowInnerWidth >= 1024) {
+		if (scrollTop > lastScrollTop) {
+		  if (scrollTop > 100) {
+			headerNavigation.classList.add("fixed-header-nav");
+			headerNavigation.style.animationName = "smoothScroll";
+		  }
+		} else if (scrollTop <= 0) {
+		  headerNavigation.classList.remove("fixed-header-nav");
+		  headerNavigation.style.animationName = "removeSmoothScroll";
+		}
+		  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+		  updateMenuPosition(scrollTop);
+	  }
+	
+	});
+	
+	resizeMenuBtn.addEventListener('click', function() {
+	  htmlElement.classList.toggle('open');
+	  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	  updateMenuPosition(scrollTop);
+	});
+	
+	window.addEventListener("load", function () {
+	  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	  updateMenuPosition(scrollTop);
+	});
+	
 
+
+	//анімація для секцій
 const sections = document.querySelectorAll('.sectionScroll'); 
 
 const options = {
