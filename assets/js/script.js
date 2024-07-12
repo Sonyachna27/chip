@@ -3,19 +3,21 @@ window.addEventListener('load', function () {
 	let progressBar = document.querySelector('.preloader__progress');
 	let progressAnimationImg = document.querySelector('.preloader__wrap img');
 	let progressValue = 0;
-	let interval = setInterval(increaseProgress, 25);
+	let interval = setInterval(increaseProgress, 15);
 
 	function increaseProgress() {
-		progressValue += 1;
+		progressValue += 5;
 		progressBar.style.backgroundSize = progressValue + '%';
 		progressBar.setAttribute('aria-valuenow', progressValue);
 		document.querySelector('.preload-text').textContent = progressValue + '%';
+		progressAnimationImg.style.animationDuration = '700ms';
+		document.documentElement.style.overflow = 'hidden';
 		if (progressValue >= 100) {
 			clearInterval(interval);
 			document.querySelector('.preloader').style.display = 'none';
+			document.documentElement.style.overflow = 'visible';
 		}
-		progressAnimationImg.style.animationDuration = '700ms';
-		document.documentElement.style.overflow = 'hidden';
+		
 	}	
 });
 
