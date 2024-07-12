@@ -106,7 +106,7 @@ section{
 	max-width: fit-content;
 	background-color: $--white;
 	color: $--dark-greenish-blue;
-	@include text-regular-xs;
+	@include text-regular-line;
 	border-radius: 300px;
 	border: 1px solid $--dark-greenish-blue;
 	transition: .3s ease-in-out;
@@ -135,7 +135,7 @@ section{
 	max-width: fit-content;
 	background-color: $--dark-greenish-blue;
 	color: $--white;
-	@include text-regular-xs;
+	@include text-regular-line;
 	border-radius: 300px;
 	border: 1px solid transparent;
 	transition: .3s ease-in-out;
@@ -554,7 +554,13 @@ section{
 	}
 	&:hover{
 		background-color: $--selected-yellow;
-		
+	}
+	& svg{
+		width: 24px;
+		height: 24px;
+		& path{
+			fill: #ffffff;
+		}
 	}
 }
 .breadcrumbs{

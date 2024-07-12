@@ -24,6 +24,9 @@
 			display: none;
 		}
 	}
+	& .btn{
+		font-size: 12px;
+	}
 }
 .header-hours{
 	@media screen and (max-width:1023px) {
@@ -208,10 +211,8 @@
     background-size: cover;
     transition: 0.5s;
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-	@media screen and (max-width:1023px) {
-		
-	}
+    overflow: auto;
+
 	.open &{
 		z-index: 100;
 		transform: translate(0, 0px);

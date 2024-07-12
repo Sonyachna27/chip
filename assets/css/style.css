@@ -227,8 +227,8 @@ section {
   max-width: fit-content;
   background-color: #ffffff;
   color: #022F45;
-  font-size: 12px;
-  line-height: 100%;
+  font-size: 16px;
+  line-height: 140%;
   font-family: "Red Hat Display";
   font-weight: 400;
   border-radius: 300px;
@@ -260,8 +260,8 @@ section {
   max-width: fit-content;
   background-color: #022F45;
   color: #ffffff;
-  font-size: 12px;
-  line-height: 100%;
+  font-size: 16px;
+  line-height: 140%;
   font-family: "Red Hat Display";
   font-weight: 400;
   border-radius: 300px;
@@ -731,6 +731,13 @@ footer .logo {
 .arrow:hover {
   background-color: #FEB703;
 }
+.arrow svg {
+  width: 24px;
+  height: 24px;
+}
+.arrow svg path {
+  fill: #ffffff;
+}
 
 .breadcrumbs.blue {
   background-color: #ECF1F5;
@@ -1016,6 +1023,9 @@ footer .logo {
     display: none;
   }
 }
+.header__contact .btn {
+  font-size: 12px;
+}
 
 @media screen and (max-width: 1023px) {
   .header-hours {
@@ -1208,7 +1218,7 @@ footer .logo {
   background-size: cover;
   transition: 0.5s;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
+  overflow: auto;
 }
 .open .header__mob-menu {
   z-index: 100;
@@ -1811,6 +1821,11 @@ ul.footer-menu .sub-menu a:hover {
   min-height: 220px;
   aspect-ratio: 750/300;
   flex-grow: 1;
+}
+@media screen and (max-width: 767px) {
+  .target__content img {
+    border-radius: 30px;
+  }
 }
 .target__content h3 {
   font-size: 20px;

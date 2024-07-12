@@ -61,12 +61,13 @@
 	& img{
 		max-width: 100%;
 		width: 100%;
-		// -o-object-fit: cover;
-		// object-fit: cover;
 		border-radius: 50px;
 		min-height: 220px;
 		aspect-ratio: 750 / 300;
 		flex-grow: 1;
+		@media screen and (max-width:767px) {
+			border-radius: 30px;
+		}
 	}
 	& h3{
 		@include titleH4;
