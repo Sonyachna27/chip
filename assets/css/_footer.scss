@@ -214,6 +214,9 @@ ul.footer-menu{
 	left: 0;
 	width: 100%;
 	z-index: 49;
+	& .btn{
+		font-size: 12px;
+	}
 	@media screen and (min-width:1024px) {
 		display: none;
 	}
