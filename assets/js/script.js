@@ -308,20 +308,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //для блоків гармошкою
-  const stikyElement = document.querySelectorAll(".scrolling_item");
+  const stickyElement = document.querySelectorAll(".scrolling_item");
   const resizeStikyElement = () => {
-    if (windowInnerWidth >= 1024 && stikyElement) {
-      stikyElement.forEach((stiky, index) => {
-        stiky.style.top = `calc(100px + ${50 * index}px)`;
+    if (windowInnerWidth >= 1024 && stickyElement) {
+      stickyElement.forEach((stiky, index) => {
+        sticky.style.top = `calc(100px + ${50 * index}px)`;
       });
-    } else if (windowInnerWidth <= 1023 && stikyElement) {
-      stikyElement.forEach((stiky, index) => {
-        stiky.style.top = `calc(50px + ${50 * index}px)`;
+    } else if (windowInnerWidth <= 1023 && stickyElement) {
+      stickyElement.forEach((sticky, index) => {
+        sticky.style.top = `calc(50px + ${50 * index}px)`;
       });
     }
   };
-  resizeStikyElement();
-  window.addEventListener("resize", resizeStikyElement);
+  resizeStickyElement();
+  window.addEventListener("resize", resizeStickyElement);
 
   // для інпуту з датою  аби встановлювалась поточна дата
   dateInput = document.querySelector(".input_date");
@@ -430,7 +430,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // функція попапу який з'являється через 30 секунд після заванатаження сторінки
   const popUpContact = document.querySelector(".popup-contact");
   if (popUpContact) {
-    // function initCallPopup() {
     const popupWrapper = document.querySelectorAll(".popup");
     const closePopUpContact = document.querySelector(".popup-contact-close");
     const popupContactButtons = document.querySelectorAll(
@@ -450,8 +449,5 @@ document.addEventListener("DOMContentLoaded", function () {
     closePopUpContact.addEventListener("click", () => {
       popUpContact.classList.remove("open");
     });
-
-    // }
-    // setTimeout(initCallPopup, 30000);
   }
 }); //кінець DOMContentLoaded
