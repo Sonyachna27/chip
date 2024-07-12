@@ -907,6 +907,7 @@ footer .logo {
 .header__top {
   background-color: #FEB703;
   padding: 10px 0;
+  z-index: 50;
 }
 @media screen and (max-width: 1023px) {
   .header__top {
@@ -946,6 +947,7 @@ footer .logo {
 .header__bottom {
   padding: 15px 0 0 0;
   background-color: #022F45;
+  z-index: 50;
 }
 @media screen and (max-width: 1023px) {
   .header__bottom {

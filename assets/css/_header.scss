@@ -1,6 +1,8 @@
+
 .header__top{
 	background-color: $--selected-yellow;
 	padding: 10px 0;
+	z-index: 50;
 	@media screen and (max-width:1023px) {
 		display: none;
 	}
@@ -33,6 +35,7 @@
 .header__bottom{
 	padding: 15px 0 0 0 ;
 	background-color: $--dark-greenish-blue;
+	z-index: 50;
 	@media screen and (max-width:1023px) {
 		position: fixed;
 		top: 0;
