@@ -2894,6 +2894,7 @@ ul.area__list li a:hover {
   line-height: normal;
   transition: 0.3s ease-in-out;
   cursor: pointer;
+  color: #022F45;
 }
 .blog__tab.active-tab {
   cursor: default;
@@ -3967,6 +3968,8 @@ form .rating > input {
 @media screen and (max-width: 767px) {
   .popup-contact .popup-wrap {
     max-width: 462px;
+    padding: 30px;
+    border-radius: 60px;
   }
 }
 .popup-wrap .close {
@@ -3986,6 +3989,13 @@ form .rating > input {
   border-radius: 50%;
 }
 @media screen and (max-width: 550px) {
+  .popup-contact .popup-wrap .close {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media screen and (max-width: 550px) {
   .popup-wrap {
     padding: 40px 20px;
   }
@@ -3999,6 +4009,12 @@ form .rating > input {
 }
 .popup-contact .popup-title {
   margin-bottom: 40px;
+}
+@media screen and (max-width: 550px) {
+  .popup-contact .popup-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
 .popup-title p {
   font-size: 14px;
@@ -4015,6 +4031,11 @@ form .rating > input {
 @media screen and (max-width: 767px) {
   .popup-contact-wrap {
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 550px) {
+  .popup-contact-wrap {
+    gap: 20px;
   }
 }
 
@@ -4044,6 +4065,11 @@ form .rating > input {
   background-color: #FEB703;
   border-color: transparent;
 }
+@media screen and (max-width: 550px) {
+  .links__wrap a:not([class]) {
+    padding: 3px 8px;
+  }
+}
 .links__wrap .img-link {
   max-width: 116px;
   max-height: 116px;
@@ -4068,6 +4094,12 @@ form .rating > input {
   .links__wrap .img-link {
     max-width: 80px;
     max-height: 80px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .links__wrap .img-link {
+    max-width: 64px;
+    max-height: 64px;
   }
 }
 
