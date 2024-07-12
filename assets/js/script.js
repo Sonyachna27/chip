@@ -1,9 +1,9 @@
 //функція прелоадера 
-window.addEventListener('load', function () {
+document.addEventListener("DOMContentLoaded", function () {
 	let progressBar = document.querySelector('.preloader__progress');
 	let progressAnimationImg = document.querySelector('.preloader__wrap img');
 	let progressValue = 0;
-	let interval = setInterval(increaseProgress, 15);
+	let interval = setInterval(increaseProgress, 20);
 
 	function increaseProgress() {
 		progressValue += 5;
@@ -17,12 +17,8 @@ window.addEventListener('load', function () {
 			document.querySelector('.preloader').style.display = 'none';
 			document.documentElement.style.overflow = 'visible';
 		}
-		
 	}	
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-	
 	//функція для меню та того аби воно динамічно змінювало висоту
 	const navLinks = document.querySelectorAll("nav a");
 	navLinks.forEach((link) => {
