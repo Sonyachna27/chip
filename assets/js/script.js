@@ -14,10 +14,9 @@ window.addEventListener('load', function () {
 			clearInterval(interval);
 			document.querySelector('.preloader').style.display = 'none';
 		}
-		progressAnimationImg.style.animationDuration = '70ms';
+		progressAnimationImg.style.animationDuration = '700ms';
 		document.documentElement.style.overflow = 'hidden';
-	}
-	
+	}	
 });
 
 document.addEventListener("DOMContentLoaded", function () {
