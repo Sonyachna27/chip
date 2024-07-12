@@ -1,8 +1,9 @@
 //функція прелоадера 
 window.addEventListener('load', function () {
 	let progressBar = document.querySelector('.preloader__progress');
+	let progressAnimationImg = document.querySelector('.preloader__wrap img');
 	let progressValue = 0;
-	let interval = setInterval(increaseProgress, 15);
+	let interval = setInterval(increaseProgress, 25);
 
 	function increaseProgress() {
 		progressValue += 1;
@@ -13,7 +14,10 @@ window.addEventListener('load', function () {
 			clearInterval(interval);
 			document.querySelector('.preloader').style.display = 'none';
 		}
+		progressAnimationImg.style.animationDuration = '70ms';
+		document.documentElement.style.overflow = 'hidden';
 	}
+	
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -86,12 +90,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	  updateMenuPosition(scrollTop);
 	});
 	
-	window.addEventListener("load", function () {
-	  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-	  updateMenuPosition(scrollTop);
+	window.addEventListener('load', function () {
+		const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		updateMenuPosition(scrollTop);
 	});
-	
-
 
 	//анімація для секцій
 		const sections = document.querySelectorAll('.sectionScroll'); 
