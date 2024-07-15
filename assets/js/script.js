@@ -309,19 +309,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //для блоків гармошкою
   const stickyElement = document.querySelectorAll(".scrolling_item");
-  const resizeStikyElement = () => {
-    if (windowInnerWidth >= 1024 && stickyElement) {
-      stickyElement.forEach((stiky, index) => {
-        sticky.style.top = `calc(100px + ${50 * index}px)`;
-      });
-    } else if (windowInnerWidth <= 1023 && stickyElement) {
-      stickyElement.forEach((sticky, index) => {
-        sticky.style.top = `calc(50px + ${50 * index}px)`;
-      });
-    }
-  };
-  resizeStickyElement();
-  window.addEventListener("resize", resizeStickyElement);
+  if(stickyElement){
+		const resizeStickyElement = () => {
+			if (windowInnerWidth >= 1024 && stickyElement) {
+				stickyElement.forEach((sticky, index) => {
+					sticky.style.top = `calc(100px + ${50 * index}px)`;
+				});
+			} else if (windowInnerWidth <= 1023 && stickyElement) {
+				stickyElement.forEach((sticky, index) => {
+					sticky.style.top = `calc(50px + ${50 * index}px)`;
+				});
+			}
+		};
+		resizeStickyElement();
+		window.addEventListener("resize", resizeStickyElement);
+	}
 
   // для інпуту з датою  аби встановлювалась поточна дата
   dateInput = document.querySelector(".input_date");
