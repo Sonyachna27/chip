@@ -309,9 +309,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //для блоків гармошкою
   const stickyElement = document.querySelectorAll(".scrolling_item");
-  const resizeStikyElement = () => {
+  const resizeStickyElement = () => {
     if (windowInnerWidth >= 1024 && stickyElement) {
-      stickyElement.forEach((stiky, index) => {
+      stickyElement.forEach((sticky, index) => {
         sticky.style.top = `calc(100px + ${50 * index}px)`;
       });
     } else if (windowInnerWidth <= 1023 && stickyElement) {
