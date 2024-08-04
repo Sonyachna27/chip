@@ -100,6 +100,12 @@ button {
 html {
   overflow: hidden;
 }
+html.visible.open {
+  overflow: hidden;
+}
+html.visible {
+  overflow: visible;
+}
 
 .container {
   max-width: 1340px;
@@ -1070,6 +1076,9 @@ footer .logo {
   gap: 15px;
   padding-left: 24px;
 }
+.header__links .btn:hover {
+  background-color: #feb703;
+}
 @media screen and (max-width: 1024px) {
   .header__links .btn {
     display: none;
@@ -1089,6 +1098,10 @@ footer .logo {
   border-radius: 8px;
   border: 1px solid #feb703;
   cursor: pointer;
+}
+.resize-menu:hover {
+  background-color: #FFDD87;
+  border-color: transparent;
 }
 
 .resize-menu-title {
@@ -1394,25 +1407,27 @@ footer .logo {
   }
 }
 
-ul.footer-menu {
-  display: flex;
+.footer-menu {
   width: 73%;
+}
+.footer-menu ul {
+  display: flex;
   justify-content: space-around;
   gap: 40px;
 }
 @media screen and (max-width: 1023px) {
-  ul.footer-menu {
+  .footer-menu ul {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
   }
 }
-ul.footer-menu li:not(.sub-menu li) {
+.footer-menu ul li:not(.sub-menu li) {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-ul.footer-menu li:not(.sub-menu li) > a {
+.footer-menu ul li:not(.sub-menu li) > a {
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -1420,26 +1435,26 @@ ul.footer-menu li:not(.sub-menu li) > a {
   color: #ffffff;
 }
 @media screen and (max-width: 1023px) {
-  ul.footer-menu li:not(.sub-menu li) > a {
+  .footer-menu ul li:not(.sub-menu li) > a {
     margin: 0 auto;
   }
 }
-ul.footer-menu .sub-menu {
+.footer-menu ul .sub-menu {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 @media screen and (max-width: 1023px) {
-  ul.footer-menu .sub-menu {
+  .footer-menu ul .sub-menu {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
   }
 }
-ul.footer-menu .sub-menu a {
+.footer-menu ul .sub-menu a {
   transition: 0.3s ease-in;
 }
-ul.footer-menu .sub-menu a:hover {
+.footer-menu ul .sub-menu a:hover {
   color: #ffffff;
 }
 
@@ -1471,6 +1486,10 @@ ul.footer-menu .sub-menu a:hover {
   font-weight: 600;
   line-height: normal;
   color: #ffffff;
+  transition: 0.3s ease-in-out;
+}
+.footer__social-item a:hover {
+  color: #feb703;
 }
 @media screen and (min-width: 1200px) {
   .footer__social-item a {
@@ -1493,6 +1512,9 @@ ul.footer-menu .sub-menu a:hover {
   width: 100%;
   padding: 13.5px 20px;
   font-size: 16px;
+}
+.footer__social-item a.btn:hover {
+  background-color: #feb703;
 }
 .footer__social-item a.btn svg {
   max-width: 36px;
@@ -3928,7 +3950,7 @@ form .rating > input {
   bottom: 0;
   left: 0;
   height: 100dvh;
-  z-index: 50;
+  z-index: 100;
   overflow-x: auto;
 }
 @media screen and (max-width: 767px) {
