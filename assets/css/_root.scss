@@ -25,6 +25,12 @@
 }
 html {
   overflow: hidden;
+	&.visible.open {
+		overflow: hidden;
+	}
+	&.visible{
+		overflow: visible;
+	}
 }
 // variables
 $--black-silver: #283441;
@@ -34,6 +40,7 @@ $--silver-white: #ecf1f5;
 $--selected-yellow: #feb703;
 $--silver-blue: #9aacb5;
 $--yellow-background: #fff3d6;
+$--yellow-background-2: #FFDD87;
 $--black-silver: #283441;
 
 //
